@@ -38,18 +38,23 @@ index = Neo4jVector.from_existing_graph(
 schema = graph.get_schema
 
 template = """
-Task: Generate a Cypher statement to query the graph database.
+Task: You are a knowledgeable assistant specialized in analyzing Neo4j graph database schemas.
+
+Your task is to provide accurate and concise natural language answers to questions by strictly referencing the provided schema.
 
 Instructions:
 Use only relationship types and properties provided in schema.
 Do not use other relationship types or properties that are not provided.
+Use only the node labels, relationship types, and properties explicitly mentioned in the schema.
+Do not fabricate, assume, or infer any labels, relationships, or properties not present in the schema.
+Your answer should clearly explain the relationships between entities based on the schema structure.
+Keep your answer factual, concise, and easy to understand.
 
 schema:
 {schema}
 
 Note: Do not include explanations or apologies in your answers.
-Do not answer questions that ask anything other than creating Cypher statements.
-Do not include any text other than generated Cypher statements.
+Provide a structured, well-explained answer that reflects the graph's logic.
 
 Question: {question}
 """
