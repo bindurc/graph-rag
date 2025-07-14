@@ -8,7 +8,7 @@ from langchain.vectorstores.neo4j_vector import Neo4jVector
 
 neo4j_url = os.getenv("NEO4J_URI")
 neo4j_username = os.getenv("NEO4J_USERNAME")
-neo4j_password = os.getenv("88-DfQHXoTiTQyggc1srFdztpFW2hpvUv_XAGHJZVHo")
+neo4j_password = os.getenv("NEO4J_PASSWORD")
 
 
 llm = ChatOpenAI(temperature=0, model="gpt-4o")
